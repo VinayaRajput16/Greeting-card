@@ -1,0 +1,182 @@
+
+body {
+    background: #fbdcdc;
+    height: 100%;
+    margin: 0;
+}
+
+.birthday-card {
+    position: relative;
+    width: 300px;
+    height: 395px;
+    border: 10px solid #c43a3a;
+    margin: 60px auto 0 auto;
+    box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    background-image: url("./card-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.birthday-card .text {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    font-family: 'Nobile', sans-serif;
+}
+
+.birthday-card .text>p {
+    font-size: 0.8em;
+    color: rgb(255, 194, 40);
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    /* margin: 30px auto 0 auto; */
+}
+
+.birthday-card .text .title {
+    font-size: 1.5em;
+    margin: 60px auto 60px auto;
+    text-shadow: 2px 2px 5px rgb(255, 194, 40), 2px 2px 7px rgba(255, 255, 255, 0.6); /* Glitter shadow */
+    margin: 20px auto;
+    width: 80%;
+    font-family: 'Great Vibes', cursive; /* Elegant font */
+    animation: glow 1.5s infinite alternate ease-in-out;
+    padding: 4px;
+}
+
+.message {
+    background: rgb(213,208,202);
+    background: radial-gradient(circle,  rgb(162, 37, 41) 0%, silver 100%);
+    color: silver; /* Deep gold text for contrast */
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 223, 0, 0.8), 0px 0px 15px rgba(192, 192, 192, 0.8); /* Glowing effect */
+    /* text-shadow: 2px 2px 5px rgb(255, 194, 40), 2px 2px 7px rgba(255, 255, 255, 0.6);  */
+    margin: 20px auto;
+    width: 80%;
+    font-family: 'Great Vibes', cursive; /* Elegant font */
+    border: 3px solid goldenrod; /* Gold Border */
+    animation: glow 1.5s infinite alternate ease-in-out;
+}
+
+/* Soft Glow Animation */
+@keyframes glow {
+    0% { box-shadow: 0px 0px 10px gold, 0px 0px 15px rgba(192, 192, 192, 0.6); }
+    100% { box-shadow: 0px 0px 20px goldenrod, 0px 0px 25px rgba(192, 192, 192, 0.9); }
+}
+
+.birthday-card .cover-outer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: -10px 0 0 -10px;
+    border: 10px solid #c43a3a;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform-origin: 0% 50%;
+    transform: perspective(800px) rotateY(0deg);
+    transition: all 0.8s ease-in-out;
+}
+
+.birthday-card .cover-outer img {
+    box-shadow: 0px 6px 11px 7px rgba(0, 0, 0, 0.22);
+    border-radius: 5px;
+}
+
+.birthday-card .cover-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 10px solid #c43a3a;
+    background-color: #c43a3a;
+    background: url('./cover-inner.png');
+    background-size: cover;
+    background-position: fixed;
+    margin: -10px 0px 0 -10px;
+    backface-visibility: visible;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    transform-style: preserve-3d;
+    transform-origin: 0% 50%;
+    transform: perspective(800px) rotateY(0deg);
+    transition: all 0.8s ease-in-out;
+    overflow: hidden;
+}
+
+.birthday-card .cover-inner img {
+    transform: rotateY(170deg);
+}
+
+.birthday-card:hover .cover-outer {
+    transform: perspective(800px) rotateY(-170deg);
+}
+
+.birthday-card:hover .cover-inner {
+    transform: perspective(800px) rotateY(-170deg);
+    box-shadow: 7px 0 5px 0 rgba(0, 0, 0, 0.3), inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Dancing Bear Animation */
+.bear img {
+    width: 250px;
+    position: absolute;
+    left: 40%;
+    bottom: 0;
+    animation: dance 0.8s infinite alternate ease-in-out;
+}
+
+@keyframes dance {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Balloons */
+.balloons {
+    position: absolute;
+    bottom: 10%;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.balloon {
+    position: absolute;
+    /* Adjust size */
+}
+
+.balloon1 {
+    left: 5%;
+    top: 70%;
+    width: 150px;
+}
+
+.balloon2 {
+    left: 5%;
+    top: 15%;
+    transform: rotate(170deg);
+    width: 200px;
+    transform: rotate(170deg);   /* Keep it still */
+}
+
+.balloon3 {
+    left: 70%;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-150px);
+    }
+}
