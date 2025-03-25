@@ -1,8 +1,31 @@
 
 body {
-    background: #fbdcdc;
+    background: #000000;
     height: 100%;
     margin: 0;
+    overflow: hidden; /* Hide overflowing glitters */
+}
+
+.snowflake {
+    display: inline-block;
+    color: goldenrod;
+    font-size: 3rem;
+    padding: 1rem;
+    animation: falling 2s linear forwards infinite;
+    transform: translateY(-20vh);
+}
+
+.snowflake::before {
+    content: '*';
+}
+
+@keyframes falling {
+    from {
+        transform: translateY(-20vh);
+    }
+    to {
+        transform: translateY(100vh);
+    }
 }
 
 .birthday-card {
@@ -16,6 +39,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 .birthday-card .text {
